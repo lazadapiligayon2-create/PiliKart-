@@ -1,1 +1,171 @@
-<h1>PiliKart</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PiliKart</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f2f6ff;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px;
+  background:white;
+  position:sticky;
+  top:0;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search input{
+  width:100%;
+  padding:8px;
+  border-radius:20px;
+  border:1px solid #ccc;
+}
+
+/* BANNER */
+.banner{
+  margin:10px;
+  background:linear-gradient(90deg,#4facfe,#00f2fe);
+  color:white;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+  font-weight:bold;
+}
+
+/* MENU */
+.menu{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  padding:10px;
+}
+
+.menu div{
+  background:white;
+  padding:10px;
+  border-radius:10px;
+  text-align:center;
+  font-size:12px;
+}
+
+/* PRODUCT */
+.products{
+  padding:10px;
+}
+
+.card{
+  background:white;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:10px;
+}
+
+.btn{
+  display:flex;
+  justify-content:space-between;
+}
+
+button{
+  width:48%;
+  padding:8px;
+  border:none;
+  border-radius:5px;
+}
+
+.cart{background:orange;color:white;}
+.buy{background:red;color:white;}
+
+/* FLOAT */
+.float{
+  position:fixed;
+  right:15px;
+  bottom:70px;
+  background:gold;
+  padding:10px;
+  border-radius:50px;
+}
+
+/* BOTTOM NAV */
+.nav{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  background:white;
+  padding:10px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div>☰</div>
+  <div class="search">
+    <input placeholder="Search PiliKart...">
+  </div>
+  <div>🛒</div>
+</div>
+
+<div class="banner">
+🔥 PILIKART FLASH SALE - LOWEST PRICE!
+</div>
+
+<div class="menu">
+  <div>Piso Deals</div>
+  <div>Rewards</div>
+  <div>Bible</div>
+  <div>Quiz</div>
+  <div>Flash Sale</div>
+  <div>Categories</div>
+  <div>Orders</div>
+  <div>Profile</div>
+</div>
+
+<div class="products">
+
+  <div class="card">
+    <h3>Sample Product A</h3>
+    <p>₱99</p>
+    <div class="btn">
+      <button class="cart">Add to Cart</button>
+      <button class="buy">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Sample Product B</h3>
+    <p>₱149</p>
+    <div class="btn">
+      <button class="cart">Add to Cart</button>
+      <button class="buy">Buy Now</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="float">
+🎁 Piso Deal
+</div>
+
+<div class="nav">
+  <div>Home</div>
+  <div>Orders</div>
+  <div>Bible</div>
+  <div>Rewards</div>
+  <div>Profile</div>
+</div>
+
+</body>
+</html>
