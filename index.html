@@ -5,11 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PiliKart</title>
 
+<!-- PWA META -->
+<meta name="theme-color" content="#4facfe">
+<link rel="manifest" href="manifest.json">
+
 <style>
 body{
   margin:0;
   font-family:Arial;
-  background:#f2f6ff;
+  background:#eef4ff;
 }
 
 /* HEADER */
@@ -22,24 +26,6 @@ body{
   position:sticky;
   top:0;
   box-shadow:0 2px 5px rgba(0,0,0,0.1);
-}
-
-.search input{
-  width:100%;
-  padding:8px;
-  border-radius:20px;
-  border:1px solid #ccc;
-}
-
-/* BANNER */
-.banner{
-  margin:10px;
-  background:linear-gradient(90deg,#4facfe,#00f2fe);
-  color:white;
-  padding:20px;
-  border-radius:10px;
-  text-align:center;
-  font-weight:bold;
 }
 
 /* MENU */
@@ -56,43 +42,15 @@ body{
   border-radius:10px;
   text-align:center;
   font-size:12px;
+  cursor:pointer;
 }
 
-/* PRODUCT */
-.products{
-  padding:10px;
-}
-
+/* CARD */
 .card{
   background:white;
+  margin:10px;
   padding:10px;
-  margin-bottom:10px;
   border-radius:10px;
-}
-
-.btn{
-  display:flex;
-  justify-content:space-between;
-}
-
-button{
-  width:48%;
-  padding:8px;
-  border:none;
-  border-radius:5px;
-}
-
-.cart{background:orange;color:white;}
-.buy{background:red;color:white;}
-
-/* FLOAT */
-.float{
-  position:fixed;
-  right:15px;
-  bottom:70px;
-  background:gold;
-  padding:10px;
-  border-radius:50px;
 }
 
 /* BOTTOM NAV */
@@ -112,60 +70,58 @@ button{
 
 <div class="header">
   <div>☰</div>
-  <div class="search">
-    <input placeholder="Search PiliKart...">
-  </div>
+  <div><b>PiliKart</b></div>
   <div>🛒</div>
 </div>
 
-<div class="banner">
-🔥 PILIKART FLASH SALE - LOWEST PRICE!
-</div>
-
 <div class="menu">
-  <div>Piso Deals</div>
-  <div>Rewards</div>
-  <div>Bible</div>
-  <div>Quiz</div>
-  <div>Flash Sale</div>
-  <div>Categories</div>
-  <div>Orders</div>
-  <div>Profile</div>
+  <div onclick="go('home')">Home</div>
+  <div onclick="go('piso')">Piso</div>
+  <div onclick="go('rewards')">Rewards</div>
+  <div onclick="go('bible')">Bible</div>
 </div>
 
-<div class="products">
+<div id="content">
 
+<div id="home">
   <div class="card">
-    <h3>Sample Product A</h3>
+    <h3>🔥 Sample Product</h3>
     <p>₱99</p>
-    <div class="btn">
-      <button class="cart">Add to Cart</button>
-      <button class="buy">Buy Now</button>
-    </div>
   </div>
-
-  <div class="card">
-    <h3>Sample Product B</h3>
-    <p>₱149</p>
-    <div class="btn">
-      <button class="cart">Add to Cart</button>
-      <button class="buy">Buy Now</button>
-    </div>
-  </div>
-
 </div>
 
-<div class="float">
-🎁 Piso Deal
+<div id="piso" style="display:none;">
+  <div class="card">🎁 Piso Deals Locked</div>
+</div>
+
+<div id="rewards" style="display:none;">
+  <div class="card">💰 Rewards Coming Soon</div>
+</div>
+
+<div id="bible" style="display:none;">
+  <div class="card">📖 Verse of the Day</div>
+</div>
+
 </div>
 
 <div class="nav">
-  <div>Home</div>
-  <div>Orders</div>
-  <div>Bible</div>
-  <div>Rewards</div>
-  <div>Profile</div>
+  <div onclick="go('home')">Home</div>
+  <div onclick="go('piso')">Piso</div>
+  <div onclick="go('rewards')">Rewards</div>
+  <div onclick="go('bible')">Bible</div>
 </div>
+
+<script>
+function go(page){
+  let pages = ["home","piso","rewards","bible"];
+
+  pages.forEach(p=>{
+    document.getElementById(p).style.display="none";
+  });
+
+  document.getElementById(page).style.display="block";
+}
+</script>
 
 </body>
 </html>
